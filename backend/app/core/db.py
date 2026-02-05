@@ -13,7 +13,10 @@ if not DATABASE_URL:
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
-print(f"Connecting to database type: {DATABASE_URL.split(':')[0]}")
+if "://" not in DATABASE_URL:
+    print(f"CRITICAL ERROR: DATABASE_URL looks like a hostname ({DATABASE_URL}), not a connection string!")
+    print("Please copy the full 'PostgreSQL Connection URL' from the Database Variables tab, not the domain name.")
+    raise ValueError("Invalid DATABASE_URL format. Expected full connection string (postgresql://...)")
 
 connect_args = {}
 if "sqlite" in DATABASE_URL:
@@ -22,7 +25,7 @@ if "sqlite" in DATABASE_URL:
 try:
     engine = create_engine(DATABASE_URL, echo=False, connect_args=connect_args)
 except Exception as e:
-    print(f"CRITICAL: Failed to create engine for URL: {DATABASE_URL.split('@')[-1] if '@' in DATABASE_URL else DATABASE_URL}")
+    print(f"CRITICAL: SQLAlchemy failed to parse your URL: {DATABASE_URL[:20]}...")
     raise e
 
 def init_db():
