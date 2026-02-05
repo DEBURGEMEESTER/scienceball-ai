@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Staff.module.css';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/config';
 
 interface StaffMember {
     id: number;
@@ -24,11 +25,11 @@ const StaffPage = () => {
     const [feed, setFeed] = useState<ActivityEvent[]>([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/staff/')
+        fetch(`${API_BASE_URL}/staff/`)
             .then(res => res.json())
             .then(data => setStaff(data));
 
-        fetch('http://127.0.0.1:8000/staff/feed')
+        fetch(`${API_BASE_URL}/staff/feed`)
             .then(res => res.json())
             .then(data => setFeed(data));
     }, []);

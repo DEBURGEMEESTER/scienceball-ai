@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ScoutingFeed.module.css';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/config';
 
 interface FeedEvent {
     type: 'MESSAGE' | 'NEGOTIATION' | 'ASSIGNMENT';
@@ -19,7 +20,7 @@ const ScoutingFeed = () => {
     useEffect(() => {
         const fetchFeed = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/staff/feed');
+                const response = await fetch(`${API_BASE_URL}/staff/feed`);
                 const data = await response.json();
                 setEvents(data);
             } catch (error) {

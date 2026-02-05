@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './Admin.module.css';
+import { API_BASE_URL } from '@/config';
 
 const AdminPage = () => {
     const [file, setFile] = useState<File | null>(null);
@@ -13,7 +14,7 @@ const AdminPage = () => {
 
     const fetchHealth = async () => {
         try {
-            const res = await fetch('http://127.0.0.1:8000/admin/stats/health');
+            const res = await fetch(`${API_BASE_URL}/admin/stats/health`);
             const data = await res.json();
             setHealth(data);
         } catch (err) {
@@ -28,7 +29,7 @@ const AdminPage = () => {
     const handleRegenerate = async () => {
         setIsRegenerating(true);
         try {
-            await fetch('http://127.0.0.1:8000/admin/stats/regenerate', { method: 'POST' });
+            await fetch(`${API_BASE_URL}/admin/stats/regenerate`, { method: 'POST' });
             await fetchHealth();
             setStatus("Synthetic signals synchronized successfully.");
             setIsError(false);
@@ -56,7 +57,7 @@ const AdminPage = () => {
         formData.append('file', file);
 
         try {
-            const res = await fetch('http://127.0.0.1:8000/import/upload', {
+            const res = await fetch(`${API_BASE_URL}/import/upload`, {
                 method: 'POST',
                 body: formData,
             });
@@ -159,7 +160,7 @@ const AdminPage = () => {
                             onClick={async () => {
                                 try {
                                     setStatus("Triggering Automated Pipeline...");
-                                    const res = await fetch('http://127.0.0.1:8000/admin/automation/trigger', { method: 'POST' });
+                                    const res = await fetch(`${API_BASE_URL}/admin/automation/trigger`, { method: 'POST' });
                                     const data = await res.json();
                                     setStatus(`Pipeline Report: ${JSON.stringify(data)}`);
                                 } catch (e) {

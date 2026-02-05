@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Login.module.css';
+import { API_BASE_URL } from '@/config';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ const LoginPage = () => {
         setError('');
 
         try {
-            const res = await fetch('http://127.0.0.1:8000/auth/login', {
+            const res = await fetch(`${API_BASE_URL}/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, access_key: accessKey })

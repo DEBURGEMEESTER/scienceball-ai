@@ -15,6 +15,7 @@ import { generatePlayerReport } from '@/utils/ReportGenerator';
 import { formatCurrency } from '@/utils/currency';
 
 import { Player } from '@/types';
+import { API_BASE_URL } from '@/config';
 
 // ... imports remain the same
 
@@ -46,38 +47,38 @@ export default function PlayerProfile() {
 
         setLoading(true);
         // Main Player Data
-        fetch(`http://127.0.0.1:8000/players/${id}?normalized=${isNormalized}`)
+        fetch(`${API_BASE_URL}/players/${id}?normalized=${isNormalized}`)
             .then(res => res.json())
             .then(data => { setPlayer(data); setLoading(false); });
 
         // Growth Trajectory
-        fetch(`http://127.0.0.1:8000/players/${id}/growth-prediction`)
+        fetch(`${API_BASE_URL}/players/${id}/growth-prediction`)
             .then(res => res.json())
             .then(data => setTrajectory(data.trajectory || []));
 
         // Similar Players
-        fetch(`http://127.0.0.1:8000/players/${id}/similar`)
+        fetch(`${API_BASE_URL}/players/${id}/similar`)
             .then(res => res.json())
             .then(data => setSimilar(Array.isArray(data) ? data : []));
 
         // Phase 17: Heatmap & Tactical Intel
-        fetch(`http://127.0.0.1:8000/players/${id}/heatmap`)
+        fetch(`${API_BASE_URL}/players/${id}/heatmap`)
             .then(res => res.json())
             .then(data => setHeatmapData(data));
 
-        fetch(`http://127.0.0.1:8000/players/${id}/tactical-kpis`)
+        fetch(`${API_BASE_URL}/players/${id}/tactical-kpis`)
             .then(res => res.json())
             .then(data => setTacticalKpis(data));
 
         // Phase 18: Negotiation
-        fetch(`http://127.0.0.1:8000/negotiations/`)
+        fetch(`${API_BASE_URL}/negotiations/`)
             .then(res => res.json())
             .then(data => {
                 const active = data.find((n: any) => n.player_id === id);
                 setNegotiation(active || null);
             });
 
-        fetch(`http://127.0.0.1:8000/reports/risk-assessment/${id}`)
+        fetch(`${API_BASE_URL}/reports/risk-assessment/${id}`)
             .then(res => res.json())
             .then(data => setRisk(data));
 
@@ -86,14 +87,14 @@ export default function PlayerProfile() {
     const handleNoteSubmit = async () => {
         if (!newNote.trim()) return;
         try {
-            await fetch(`http://127.0.0.1:8000/analytics/players/${id}/notes`, {
+            await fetch(`${API_BASE_URL}/analytics/players/${id}/notes`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ scout: "Lead Analyst", note: newNote })
             });
             setNewNote("");
             // Refresh player
-            const res = await fetch(`http://127.0.0.1:8000/players/${id}?normalized=${isNormalized}`);
+            const res = await fetch(`${API_BASE_URL}/players/${id}?normalized=${isNormalized}`);
             const data = await res.json();
             setPlayer(data);
         } catch (err) { console.error(err); }
@@ -101,7 +102,7 @@ export default function PlayerProfile() {
 
     const initiateNegotiation = async () => {
         try {
-            const res = await fetch(`http://127.0.0.1:8000/negotiations/`, {
+            const res = await fetch(`${API_BASE_URL}/negotiations/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ player_id: id, estimated_fee: 0 })
@@ -114,7 +115,7 @@ export default function PlayerProfile() {
     };
 
     const handleDownloadDossier = () => {
-        window.open(`http://127.0.0.1:8000/reports/player/${id}/pdf`, '_blank');
+        window.open(`${API_BASE_URL}/reports/player/${id}/pdf`, '_blank');
     };
 
     const [isAssigning, setIsAssigning] = useState(false);
@@ -122,7 +123,7 @@ export default function PlayerProfile() {
     const requestDeepDive = async () => {
         setIsAssigning(true);
         try {
-            await fetch('http://127.0.0.1:8000/staff/assignments', {
+            await fetch(`${API_BASE_URL}/staff/assignments`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -522,7 +523,7 @@ export default function PlayerProfile() {
                     <button
                         className={`glass ${styles.shareBtn}`}
                         onClick={() => {
-                            fetch('http://127.0.0.1:8000/chat/messages', {
+                            fetch(`${API_BASE_URL}/chat/messages`, {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({

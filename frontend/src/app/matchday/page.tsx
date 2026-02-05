@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Matchday.module.css';
 import PitchHeatmap from '@/components/PitchHeatmap/PitchHeatmap';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/config';
 
 interface ScoutReport {
     opponent: string;
@@ -26,7 +27,7 @@ const MatchdayPage = () => {
     const [report, setReport] = useState<ScoutReport | null>(null);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/analytics/scout-report')
+        fetch(`${API_BASE_URL}/analytics/scout-report`)
             .then(res => res.json())
             .then(data => setReport(data))
             .catch(err => console.error("Failed to fetch scout report:", err));

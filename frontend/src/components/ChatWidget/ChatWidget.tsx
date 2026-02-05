@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import styles from './ChatWidget.module.css';
 import { Channel, Message } from '@/types';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/config';
 
 const ChatWidget: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ const ChatWidget: React.FC = () => {
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/chat/channels')
+        fetch(`${API_BASE_URL}/chat/channels`)
             .then(res => res.json())
             .then(data => {
                 setChannels(data);
@@ -25,7 +26,7 @@ const ChatWidget: React.FC = () => {
     useEffect(() => {
         if (!activeChannel) return;
         const interval = setInterval(() => {
-            fetch(`http://127.0.0.1:8000/chat/messages/${activeChannel.id}`)
+            fetch(`${API_BASE_URL}/chat/messages/${activeChannel.id}`)
                 .then(res => res.json())
                 .then(data => setMessages(data));
         }, 3000);
@@ -48,7 +49,7 @@ const ChatWidget: React.FC = () => {
             content: input
         };
 
-        fetch('http://127.0.0.1:8000/chat/messages', {
+        fetch(`${API_BASE_URL}/chat/messages`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)

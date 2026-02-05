@@ -9,6 +9,7 @@ import { useComparison } from '@/context/ComparisonContext';
 import Link from 'next/link';
 import ScoutingFeed from '@/components/ScoutingFeed/ScoutingFeed';
 import { formatCurrency } from '@/utils/currency';
+import { API_BASE_URL } from '@/config';
 
 interface Player {
     id: string;
@@ -48,7 +49,7 @@ const ScoutPage = () => {
     const LIMIT = 20;
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/scouting/searches')
+        fetch(`${API_BASE_URL}/scouting/searches`)
             .then(res => res.json())
             .then(data => setSavedSearches(data))
             .catch(err => console.error(err));
@@ -64,7 +65,7 @@ const ScoutPage = () => {
         };
 
         try {
-            const res = await fetch('http://127.0.0.1:8000/scouting/searches', {
+            const res = await fetch(`${API_BASE_URL}/scouting/searches`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, criteria })
@@ -107,7 +108,7 @@ const ScoutPage = () => {
         params.append('limit', LIMIT.toString());
         params.append('offset', currentOffset.toString());
 
-        fetch(`http://127.0.0.1:8000/players/filter?${params.toString()}`)
+        fetch(`${API_BASE_URL}/players/filter?${params.toString()}`)
             .then(res => res.json())
             .then(data => {
                 const newPlayers = Array.isArray(data) ? data : [];
@@ -123,7 +124,7 @@ const ScoutPage = () => {
         params.append('limit', LIMIT.toString());
         params.append('offset', currentOffset.toString());
 
-        let url = `http://127.0.0.1:8000/players/prospects/top?${params.toString()}`;
+        let url = `${API_BASE_URL}/players/prospects/top?${params.toString()}`;
 
         if (isFilter) {
             const filterParams = getParams({
@@ -132,7 +133,7 @@ const ScoutPage = () => {
             });
             filterParams.append('limit', LIMIT.toString());
             filterParams.append('offset', currentOffset.toString());
-            url = `http://127.0.0.1:8000/players/filter?${filterParams.toString()}`;
+            url = `${API_BASE_URL}/players/filter?${filterParams.toString()}`;
         }
 
         fetch(url)

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Decisions.module.css';
 import Link from 'next/link';
 import { Player } from '@/types';
+import { API_BASE_URL } from '@/config';
 
 interface Negotiation {
     id: number;
@@ -25,18 +26,18 @@ const DecisionDashboard = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const negRes = await fetch('http://127.0.0.1:8000/negotiations/');
+            const negRes = await fetch(`${API_BASE_URL}/negotiations/`);
             const negData = await negRes.json();
             setNegotiations(negData);
 
             negData.forEach(async (n: Negotiation) => {
                 // Fetch player info
-                const pRes = await fetch(`http://127.0.0.1:8000/players/${n.player_id}`);
+                const pRes = await fetch(`${API_BASE_URL}/players/${n.player_id}`);
                 const pData = await pRes.json();
                 setPlayers(prev => ({ ...prev, [n.player_id]: pData }));
 
                 // Fetch risk assessment
-                const rRes = await fetch(`http://127.0.0.1:8000/reports/risk-assessment/${n.player_id}`);
+                const rRes = await fetch(`${API_BASE_URL}/reports/risk-assessment/${n.player_id}`);
                 const rData = await rRes.json();
                 setRisks(prev => ({ ...prev, [n.player_id]: rData }));
             });

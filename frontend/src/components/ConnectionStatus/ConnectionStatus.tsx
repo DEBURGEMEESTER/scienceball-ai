@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '@/config';
 
 const ConnectionStatus = () => {
     const [isOnline, setIsOnline] = useState(true);
@@ -8,7 +9,7 @@ const ConnectionStatus = () => {
     useEffect(() => {
         const checkConnection = async () => {
             try {
-                const res = await fetch('http://127.0.0.1:8000/', { method: 'HEAD' });
+                const res = await fetch(`${API_BASE_URL}/`, { method: 'HEAD' });
                 setIsOnline(res.ok);
             } catch (err) {
                 setIsOnline(false);

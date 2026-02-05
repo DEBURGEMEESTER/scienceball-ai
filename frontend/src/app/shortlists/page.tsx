@@ -5,6 +5,7 @@ import { useShortlist } from '@/context/ShortlistContext';
 import styles from './Shortlist.module.css';
 import Link from 'next/link';
 import { formatCurrency } from '@/utils/currency';
+import { API_BASE_URL } from '@/config';
 
 interface Player {
     id: string;
@@ -31,7 +32,7 @@ export default function ShortlistPage() {
 
             try {
                 const results = await Promise.all(
-                    allIds.map(id => fetch(`http://127.0.0.1:8000/players/${id}`).then(res => res.json()))
+                    allIds.map(id => fetch(`${API_BASE_URL}/players/${id}`).then(res => res.json()))
                 );
                 const mapping: Record<string, Player> = {};
                 results.forEach(p => { mapping[p.id] = p; });

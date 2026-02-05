@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styles from './Director.module.css';
 import { useShortlist } from '@/context/ShortlistContext';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/config';
 
 const DirectorPage = () => {
     const { shortlist } = useShortlist();
@@ -14,7 +15,7 @@ const DirectorPage = () => {
         const fetchTargets = async () => {
             if (shortlist.length === 0) return;
             const promises = shortlist.map(id =>
-                fetch(`http://127.0.0.1:8000/players/${id}`).then(res => res.json())
+                fetch(`${API_BASE_URL}/players/${id}`).then(res => res.json())
             );
             const data = await Promise.all(promises);
             setTargets(data);

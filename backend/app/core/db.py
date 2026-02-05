@@ -1,4 +1,4 @@
-from sqlmodel import create_engine, Session, SQLModel
+from sqlmodel import create_engine, Session, SQLModel, select
 from app.models.player import Player, Shortlist, ScoutNote
 from app.models.auth import Club, User
 import os

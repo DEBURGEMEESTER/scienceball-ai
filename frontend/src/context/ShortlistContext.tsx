@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { API_BASE_URL } from '@/config';
 
 interface ShortlistContextType {
     shortlists: Record<string, string[]>;
@@ -19,7 +20,7 @@ export const ShortlistProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     useEffect(() => {
         const fetchShortlists = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/watchlist');
+                const response = await fetch(`${API_BASE_URL}/watchlist`);
                 const data = await response.json();
                 setShortlists(data);
             } catch (error) {
@@ -35,7 +36,7 @@ export const ShortlistProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         const method = isInCat ? 'DELETE' : 'POST';
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/watchlist/${encodeURIComponent(category)}/${playerId}`, { method });
+            const response = await fetch(`${API_BASE_URL}/watchlist/${encodeURIComponent(category)}/${playerId}`, { method });
             const data = await response.json();
             if (data.status === 'success') {
                 setShortlists(data.watchlist);
@@ -47,7 +48,7 @@ export const ShortlistProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
     const createShortlist = async (name: string) => {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/watchlist/category?name=${encodeURIComponent(name)}`, { method: 'POST' });
+            const response = await fetch(`${API_BASE_URL}/watchlist/category?name=${encodeURIComponent(name)}`, { method: 'POST' });
             const data = await response.json();
             setShortlists(data.watchlist);
         } catch (err) {
@@ -57,7 +58,7 @@ export const ShortlistProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
     const deleteShortlist = async (name: string) => {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/watchlist/category/${encodeURIComponent(name)}`, { method: 'DELETE' });
+            const response = await fetch(`${API_BASE_URL}/watchlist/category/${encodeURIComponent(name)}`, { method: 'DELETE' });
             const data = await response.json();
             setShortlists(data.watchlist);
         } catch (err) {

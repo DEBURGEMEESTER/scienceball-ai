@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Pipeline.module.css';
 import { Player } from '@/types';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/config';
 
 interface Negotiation {
     id: number;
@@ -27,11 +28,11 @@ const PipelinePage = () => {
     const [summary, setSummary] = useState<any>(null);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/negotiations/')
+        fetch(`${API_BASE_URL}/negotiations/`)
             .then(res => res.json())
             .then(data => setNegotiations(data));
 
-        fetch('http://127.0.0.1:8000/negotiations/summary')
+        fetch(`${API_BASE_URL}/negotiations/summary`)
             .then(res => res.json())
             .then(data => setSummary(data));
     }, []);
@@ -40,7 +41,7 @@ const PipelinePage = () => {
         const playerIds = Array.from(new Set(negotiations.map(n => n.player_id)));
         playerIds.forEach(id => {
             if (!players[id]) {
-                fetch(`http://127.0.0.1:8000/players/${id}`)
+                fetch(`${API_BASE_URL}/players/${id}`)
                     .then(res => res.json())
                     .then(p => setPlayers(prev => ({ ...prev, [id]: p })));
             }
@@ -48,7 +49,7 @@ const PipelinePage = () => {
     }, [negotiations]);
 
     const updateStatus = (negId: number, newStatus: string) => {
-        fetch(`http://127.0.0.1:8000/negotiations/${negId}`, {
+        fetch(`${API_BASE_URL}/negotiations/${negId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: newStatus })

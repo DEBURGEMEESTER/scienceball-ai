@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import styles from './Planner.module.css';
+import { API_BASE_URL } from '@/config';
 
 interface Gap {
     pos: string;
@@ -26,7 +27,7 @@ const SquadPlannerPage = () => {
         // For now, let's just fetch for 'lamine-yamal' if RW, or use a general pool.
         const mockPlayerId = pos === 'RB' ? 'kobbie-mainoo' : 'lamine-yamal';
         try {
-            const res = await fetch(`http://127.0.0.1:8000/analytics/players/${mockPlayerId}/successors`);
+            const res = await fetch(`${API_BASE_URL}/analytics/players/${mockPlayerId}/successors`);
             const val = await res.json();
             setSuccessors(prev => ({ ...prev, [pos]: val }));
         } catch (err) {
@@ -36,7 +37,7 @@ const SquadPlannerPage = () => {
 
     useEffect(() => {
         // ... existing fetch for data ...
-        fetch('http://127.0.0.1:8000/analytics/squad/stability')
+        fetch(`${API_BASE_URL}/analytics/squad/stability`)
             .then(res => res.json())
             .then(val => {
                 setData(val);

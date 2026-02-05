@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 import SearchOverlay from '../SearchOverlay/SearchOverlay';
+import { API_BASE_URL } from '@/config';
 
 const Header = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -43,7 +44,7 @@ const Header = () => {
             }
 
             try {
-                const response = await fetch(`http://127.0.0.1:8000/players/search?q=${searchQuery}`);
+                const response = await fetch(`${API_BASE_URL}/players/search?q=${searchQuery}`);
                 const data = await response.json();
                 setSearchResults(data);
                 setIsOverlayVisible(true);

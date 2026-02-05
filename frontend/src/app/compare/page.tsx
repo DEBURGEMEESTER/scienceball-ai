@@ -13,6 +13,7 @@ import {
 } from 'recharts';
 
 import { Player } from '@/types';
+import { API_BASE_URL } from '@/config';
 
 export default function ComparisonPage() {
     const { selectedPlayers, togglePlayer } = useComparison();
@@ -38,7 +39,7 @@ export default function ComparisonPage() {
             return;
         }
         try {
-            const res = await fetch(`http://127.0.0.1:8000/players/search?q=${encodeURIComponent(q)}`);
+            const res = await fetch(`${API_BASE_URL}/players/search?q=${encodeURIComponent(q)}`);
             const data = await res.json();
             setSearchResults(data);
         } catch (err) {
@@ -56,8 +57,8 @@ export default function ComparisonPage() {
             try {
                 const results = await Promise.all(
                     selectedPlayers.map(async p => {
-                        const base = await fetch(`http://127.0.0.1:8000/players/${p.id}`).then(res => res.json());
-                        const growth = await fetch(`http://127.0.0.1:8000/players/${p.id}/growth-prediction`).then(res => res.json());
+                        const base = await fetch(`${API_BASE_URL}/players/${p.id}`).then(res => res.json());
+                        const growth = await fetch(`${API_BASE_URL}/players/${p.id}/growth-prediction`).then(res => res.json());
                         return { ...base, trajectory: growth.trajectory };
                     })
                 );

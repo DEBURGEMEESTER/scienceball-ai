@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './Archive.module.css';
+import { API_BASE_URL } from '@/config';
 
 const ArchivePage = () => {
     const [isExecuting, setIsExecuting] = useState(false);
@@ -10,7 +11,7 @@ const ArchivePage = () => {
     const runArchive = async () => {
         setIsExecuting(true);
         try {
-            const res = await fetch('http://127.0.0.1:8000/admin/archive/execute', { method: 'POST' });
+            const res = await fetch(`${API_BASE_URL}/admin/archive/execute`, { method: 'POST' });
             const data = await res.json();
             setLastResult(data);
         } catch (err) { console.error(err); }

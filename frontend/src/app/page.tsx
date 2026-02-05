@@ -6,6 +6,7 @@ import RadarChart from '@/components/RadarChart/RadarChart';
 import ProspectList from '@/components/ProspectList/ProspectList';
 import ScoutingFeed from '@/components/ScoutingFeed/ScoutingFeed';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/config';
 
 interface TDData {
   shortlist_performance: any[];
@@ -67,9 +68,9 @@ export default function Home() {
     const fetchDashboardData = async () => {
       try {
         const [td, brief, prospects] = await Promise.all([
-          fetch('http://127.0.0.1:8000/analytics/td-dashboard').then(res => res.json()),
-          fetch('http://127.0.0.1:8000/analytics/scout-report').then(res => res.json()),
-          fetch('http://127.0.0.1:8000/director/priority-targets').then(res => res.json())
+          fetch(`${API_BASE_URL}/analytics/td-dashboard`).then(res => res.json()),
+          fetch(`${API_BASE_URL}/analytics/scout-report`).then(res => res.json()),
+          fetch(`${API_BASE_URL}/director/priority-targets`).then(res => res.json())
         ]);
 
         setData({

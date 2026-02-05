@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import styles from './PitchHeatmap.module.css';
+import { API_BASE_URL } from '@/config';
 
 interface PitchHeatmapProps {
     data?: number[][];
@@ -17,7 +18,7 @@ const PitchHeatmap: React.FC<PitchHeatmapProps> = ({ data, playerName }) => {
             setGrid(data);
         } else {
             // Default to baseline
-            fetch('http://127.0.0.1:8000/analytics/xt-pitch')
+            fetch(`${API_BASE_URL}/analytics/xt-pitch`)
                 .then(res => res.json())
                 .then(val => setGrid(val))
                 .catch(err => console.error("Failed to fetch xT grid:", err));
