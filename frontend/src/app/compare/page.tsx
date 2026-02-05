@@ -114,7 +114,7 @@ export default function ComparisonPage() {
                                     <div className={styles.groupLabel}>FROM SHORTLISTS</div>
                                     {/* Simplified for now, could fetch full data */}
                                     {allShortlistedIds.slice(0, 5).map(id => (
-                                        <div key={id} className={styles.searchItem} onClick={() => { togglePlayer({ id, name: "Loading..." }); setShowResults(false); }}>
+                                        <div key={id} className={styles.searchItem} onClick={() => { togglePlayer({ id, name: "Loading..." } as Player); setShowResults(false); }}>
                                             <span>ID: {id}</span>
                                             <span className={styles.itemMeta}>Shortlisted</span>
                                         </div>
