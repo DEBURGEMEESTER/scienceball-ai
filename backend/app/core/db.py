@@ -3,17 +3,27 @@ from app.models.player import Player, Shortlist, ScoutNote
 from app.models.auth import Club, User
 import os
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./scienceball.db")
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not DATABASE_URL:
+    print("WARNING: DATABASE_URL not set, falling back to local sqlite")
+    DATABASE_URL = "sqlite:///./scienceball.db"
 
 # SQLAlchemy 1.4+ requires 'postgresql://' instead of 'postgres://'
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
+print(f"Connecting to database type: {DATABASE_URL.split(':')[0]}")
+
 connect_args = {}
 if "sqlite" in DATABASE_URL:
     connect_args["check_same_thread"] = False
 
-engine = create_engine(DATABASE_URL, echo=False, connect_args=connect_args)
+try:
+    engine = create_engine(DATABASE_URL, echo=False, connect_args=connect_args)
+except Exception as e:
+    print(f"CRITICAL: Failed to create engine for URL: {DATABASE_URL.split('@')[-1] if '@' in DATABASE_URL else DATABASE_URL}")
+    raise e
 
 def init_db():
     SQLModel.metadata.create_all(engine)
