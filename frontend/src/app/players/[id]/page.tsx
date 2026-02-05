@@ -380,9 +380,10 @@ export default function PlayerProfile() {
                                     <div className={styles.agentHistory}>
                                         <span className={styles.catLabel}>PREVIOUS DEALINGS</span>
                                         <ul>
-                                            {player.agent_info.history.map((h: string, i: number) => (
+                                            {player.agent_info.history?.map((h: string, i: number) => (
                                                 <li key={i}>• {h}</li>
                                             ))}
+                                            {(!player.agent_info.history || player.agent_info.history.length === 0) && <li>• No known history</li>}
                                         </ul>
                                     </div>
                                 </>
@@ -411,7 +412,7 @@ export default function PlayerProfile() {
                             </div>
                             <div className={styles.injuryHistory}>
                                 <span className={styles.medLabel}>NOTABLE INJURIES</span>
-                                {player.medical_dna?.notable_injuries.length ? (
+                                {player.medical_dna?.notable_injuries && player.medical_dna.notable_injuries.length > 0 ? (
                                     <ul className={styles.injuryList}>
                                         {player.medical_dna.notable_injuries.map((inj: string, i: number) => <li key={i}>{inj}</li>)}
                                     </ul>
@@ -486,7 +487,7 @@ export default function PlayerProfile() {
                     <div className={styles.avatarLarge}>
                         {player.name.split(' ').map(n => n[0]).join('')}
                     </div>
-                    <div>
+                    <div className={styles.infoCluster}>
                         <h1 className="text-gradient">{player.name}</h1>
                         <p className={styles.subtitle}>
                             {player.nationality} • {player.age} yrs • {player.club} • <span className={styles.roleHighlight}>{player.tactical_role}</span>
@@ -495,18 +496,17 @@ export default function PlayerProfile() {
                             LEAGUE INDEX: <span className={styles.strengthValue}>{player.league === "Premier League" ? "1.00" : (player.league === "Eredivisie" ? "0.78" : "0.95")}</span>
                         </div>
                     </div>
+                </div>
 
-                    <div className={styles.toggleWrapper}>
+                <div className={styles.actions}>
+                    <div className={styles.controlCluster}>
                         <button
                             className={`${styles.normToggle} ${isNormalized ? styles.active : ''}`}
                             onClick={() => setIsNormalized(!isNormalized)}
                         >
-                            {isNormalized ? 'NORMALIZED VIEW' : 'RAW DATA VIEW'}
+                            {isNormalized ? 'NORMALIZED' : 'RAW DATA'}
                         </button>
                     </div>
-                </div>
-
-                <div className={styles.actions}>
                     <button
                         className={`glass ${styles.assignBtn}`}
                         onClick={requestDeepDive}
