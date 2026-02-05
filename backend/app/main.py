@@ -1,18 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.core.db import init_db
+from app.core.db import init_db, seed_data
 from app.api import endpoints, players, scouting, shortlists, importer, admin_analytics, chat, negotiations, staff, reports, archive, auth, admin_sync, admin_automation, director
-
-# ... (Middleware setup)
-
-
 from app.middleware.audit import AuditMiddleware
 from contextlib import asynccontextmanager
 
-# Trigger Reload
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
+    seed_data()
     yield
 
 app = FastAPI(title="ScienceBall.ai API", lifespan=lifespan)

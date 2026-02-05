@@ -36,10 +36,26 @@ def get_session():
         yield session
 
 def seed_data():
-    from app.core.database import PLAYERS_DB, LEAGUE_STRENGTH
+    from app.core.database import PLAYERS_DB
     with Session(engine) as session:
-        # Check if already seeded
+        # 1. Seed Clubs
+        print("Seeding clubs...")
+        clubs_to_seed = [
+            Club(name="Ajax", access_key="amsterdam1900", primary_color="#D2122E", secondary_color="#FFFFFF", accent_color="#C0C0C0"),
+            Club(name="Feyenoord", access_key="rotterdam1908", primary_color="#E30613", secondary_color="#FFFFFF", accent_color="#000000"),
+            Club(name="ScienceBall HQ", access_key="admin2026", primary_color="#00f2ff", secondary_color="#7000ff", accent_color="#ff007a", is_admin=True),
+        ]
+        
+        for club_data in clubs_to_seed:
+            existing = session.exec(select(Club).where(Club.name == club_data.name)).first()
+            if not existing:
+                session.add(club_data)
+        
+        session.commit()
+
+        # 2. Seed Players
         if session.query(Player).first():
+            print("Players already seeded.")
             return
 
         print("Seeding database with professional scouting data...")
