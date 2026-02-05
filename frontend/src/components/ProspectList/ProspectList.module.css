@@ -1,0 +1,119 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.listHeader {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.8fr 1fr 1.2fr;
+    padding: 0 1rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.8fr 1fr 1.2fr;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.row:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(4px);
+    border-color: var(--accent-primary);
+}
+
+.playerInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    color: #000;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.playerName {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.recruitmentReason {
+    font-size: 0.7rem;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+}
+
+.clubName {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.position {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+}
+
+.value {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.growth {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.growthValue {
+    font-size: 0.8rem;
+    color: #4ade80;
+    font-weight: 600;
+}
+
+.growthBar {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.growthFill {
+    height: 100%;
+    background: #4ade80;
+    border-radius: 2px;
+}
+
+.alignRight {
+    text-align: right;
+    justify-self: end;
+}

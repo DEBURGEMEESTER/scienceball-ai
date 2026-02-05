@@ -1,0 +1,527 @@
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+.dataGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dashboardCard {
+    padding: 1.5rem;
+    background: rgba(13, 17, 23, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.statsRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.65rem;
+    font-weight: 800;
+    opacity: 0.4;
+    letter-spacing: 1px;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+}
+
+.statHighlight {
+    color: var(--primary);
+    text-shadow: 0 0 15px rgba(var(--primary-rgb), 0.3);
+}
+
+.cardActions {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actionBtn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.actionBtn:hover:not(:disabled) {
+    background: var(--primary);
+    color: black;
+    border-color: var(--primary);
+}
+
+.actionBtn:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.cardDesc {
+    font-size: 0.7rem;
+    opacity: 0.4;
+    max-width: 60%;
+    line-height: 1.4;
+}
+
+/* Dropzone Styling */
+.dropzoneContainer {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.dropzone {
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 12px;
+    padding: 4rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropzone:hover {
+    border-color: var(--primary);
+    background: rgba(var(--primary-rgb), 0.03);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.dzIconWrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s;
+}
+
+.dropzone:hover .dzIconWrapper {
+    background: var(--primary);
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.dzTitle {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: white;
+}
+
+.dzSub {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    max-width: 400px;
+}
+
+.uploadOverlay {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.primaryBtn {
+    background: var(--primary);
+    color: black;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 900;
+    font-size: 0.8rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.4);
+    transition: all 0.2s;
+}
+
+.primaryBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.6);
+}
+
+/* Logs */
+.logArea {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.successLog {
+    border-left: 3px solid #4ade80;
+    color: #4ade80;
+}
+
+.errorLog {
+    border-left: 3px solid #f87171;
+    color: #f87171;
+}
+
+/* Requirements Grid */
+.reqSection {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(13, 17, 23, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+}
+
+.reqGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.reqCol h4 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.reqCol p {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    letter-spacing: 2px;
+}
+
+.dropzone {
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 2rem;
+}
+
+.dropzone:hover,
+.dropzone.active {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.dzTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.dzDesc {
+    font-size: 0.85rem;
+    opacity: 0.5;
+}
+
+.uploadBtn {
+    background: var(--primary);
+    color: black;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 900;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.uploadBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.reqList {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: rgba(13, 17, 23, 0.6);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+}
+
+.reqList h3 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+.reqList ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.reqList li {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reqList li::before {
+    content: "•";
+    color: var(--primary);
+}
+
+.healthDashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: rgba(var(--primary-rgb), 0.03);
+    border: 1px solid rgba(var(--primary-rgb), 0.1);
+}
+
+.healthStats {
+    display: flex;
+    gap: 3rem;
+}
+
+.healthItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.healthLabel {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    opacity: 0.5;
+}
+
+.healthValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.healthValueHighlight {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.3);
+}
+
+.healthActions {
+    text-align: right;
+    max-width: 300px;
+}
+
+.regenBtn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+    margin-bottom: 1rem;
+}
+
+.regenBtn:hover:not(:disabled) {
+    background: var(--primary);
+    color: black;
+}
+
+.regenBtn:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.healthDesc {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    line-height: 1.4;
+}
+
+.loader {
+    margin-top: 1.5rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--primary);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.successLog {
+    border-left: 4px solid #4ade80;
+}
+
+.logHeader {
+    font-weight: 900;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.headerGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.hGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hGroup strong {
+    font-size: 0.7rem;
+    color: var(--secondary);
+    letter-spacing: 1px;
+}
+
+.hGroup span {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.logArea {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #4ade80;
+    /* Success green */
+}
+
+.errorLog {
+    color: #ff4444;
+}

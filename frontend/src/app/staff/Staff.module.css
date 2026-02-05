@@ -1,0 +1,169 @@
+.container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+}
+
+.sectionTitle {
+    font-size: 0.8rem;
+    font-weight: 900;
+    opacity: 0.4;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+.roster {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.staffCard {
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.staffAvatar {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.staffInfo {
+    flex: 1;
+}
+
+.staffInfo h3 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.directorName {
+    color: var(--secondary);
+}
+
+.roleTag {
+    font-size: 0.6rem;
+    font-weight: 900;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    opacity: 0.6;
+}
+
+.spec {
+    font-size: 0.75rem;
+    opacity: 0.4;
+    margin-top: 0.4rem;
+}
+
+.staffStats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.miniStat {
+    display: flex;
+    flex-direction: column;
+}
+
+.miniStat label {
+    font-size: 0.5rem;
+    font-weight: 900;
+    opacity: 0.3;
+}
+
+.miniStat span {
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.activityHub {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.event {
+    display: flex;
+    gap: 1rem;
+}
+
+.eventIcon {
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+.eventMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.eventUser {
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.eventTime {
+    font-size: 0.65rem;
+    opacity: 0.3;
+}
+
+.eventText {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.refLink {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 900;
+    color: var(--secondary);
+    text-decoration: none;
+}

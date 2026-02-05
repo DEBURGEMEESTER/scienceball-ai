@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.gridLine {
+    fill: none;
+    stroke: var(--glass-border);
+    stroke-width: 1;
+}
+
+.axisLine {
+    stroke: var(--glass-border);
+    stroke-width: 1;
+}
+
+.dataArea {
+    fill: var(--primary-glow);
+    stroke: var(--primary);
+    stroke-width: 2;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 8px var(--primary-glow));
+    transition: all 0.5s ease-in-out;
+}
+
+.dataPoint {
+    fill: var(--primary);
+    stroke: var(--background);
+    stroke-width: 1;
+}
+
+.label {
+    fill: var(--foreground);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+}

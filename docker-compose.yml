@@ -1,0 +1,52 @@
+services:
+  # Database Service (PostgreSQL)
+  db:
+    image: postgres:15-alpine
+    container_name: scienceball-db
+    restart: always
+    environment:
+      POSTGRES_USER: scienceball
+      POSTGRES_PASSWORD: scienceball_password
+      POSTGRES_DB: scienceball
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - scienceball-net
+
+  # Backend Service (FastAPI)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: scienceball-backend
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://scienceball:scienceball_password@db:5432/scienceball
+    ports:
+      - "8000:8000"
+    networks:
+      - scienceball-net
+
+  # Frontend Service (Next.js)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: scienceball-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - scienceball-net
+
+volumes:
+  postgres_data:
+
+
+networks:
+  scienceball-net:
+    driver: bridge

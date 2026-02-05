@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\lcjmo\Desktop\Programmeerprojectjes\ScienceBall.ai\backend\debug_startup.py", line 6, in <module>
+    from app.main import app
+  File "C:\Users\lcjmo\Desktop\Programmeerprojectjes\ScienceBall.ai\backend\app\main.py", line 9, in <module>
+    app.include_router(endpoints.router) # Prefix /analytics defined in router
+    ^^^
+NameError: name 'app' is not defined

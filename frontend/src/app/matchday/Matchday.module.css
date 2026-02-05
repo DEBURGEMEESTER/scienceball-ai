@@ -1,0 +1,245 @@
+.matchdayContainer {
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.4;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+}
+
+.statusBox {
+    text-align: right;
+    background: rgba(0, 242, 255, 0.05);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    border-right: 3px solid var(--primary);
+}
+
+.label {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 900;
+    opacity: 0.5;
+    letter-spacing: 1px;
+}
+
+.value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    font-family: var(--font-metric);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 1.5rem;
+}
+
+.topRow {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+}
+
+.leagueIntel {
+    padding: 1.5rem;
+}
+
+.formationTable {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formationRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0.6rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    align-items: center;
+}
+
+.teamName {
+    font-weight: 800;
+}
+
+.formationVal {
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.styleTag {
+    opacity: 0.5;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+}
+
+.tacticalBoard,
+.oppositionScout {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.boardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.boardHeader h2 {
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.tag {
+    font-size: 0.6rem;
+    font-weight: 900;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    color: var(--primary);
+}
+
+.intelGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.intelCard {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.intelCard h3 {
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.solutionBridge {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.65rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.solutionBridge:hover {
+    text-decoration: underline;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.briefingPanel,
+.targetWatch {
+    padding: 1.5rem;
+}
+
+.sectionTitle {
+    font-size: 0.7rem;
+    font-weight: 900;
+    opacity: 0.4;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+}
+
+.briefItem {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.bullet {
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+.briefItem p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+.shortlistIntegration {
+    padding: 1.5rem;
+}
+
+.shortlistNote {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    opacity: 0.4;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.targetItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.targetItem:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+}
+
+.targetName {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.targetFit {
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: var(--primary);
+    background: rgba(0, 242, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+}

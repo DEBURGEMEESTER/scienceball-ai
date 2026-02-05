@@ -1,0 +1,150 @@
+.container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.statsStrip {
+    display: flex;
+    gap: 4rem;
+    padding: 1.5rem 2.5rem;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.statItem label {
+    font-size: 0.6rem;
+    font-weight: 900;
+    opacity: 0.4;
+    letter-spacing: 1px;
+}
+
+.statItem span {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.lowRisk {
+    color: #44ff44;
+}
+
+.tableWrapper {
+    flex: 1;
+    overflow-x: auto;
+}
+
+.decisionTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.decisionTable th {
+    padding: 1rem;
+    font-size: 0.65rem;
+    font-weight: 900;
+    opacity: 0.3;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.decisionTable td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.targetCell {
+    display: flex;
+    flex-direction: column;
+}
+
+.pName {
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.pClub {
+    font-size: 0.7rem;
+    opacity: 0.4;
+}
+
+.statusBadge {
+    font-size: 0.65rem;
+    font-weight: 900;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+.roiValue {
+    font-weight: 900;
+    color: var(--secondary);
+}
+
+.riskBarWrapper {
+    width: 150px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.riskBar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease-out;
+}
+
+.riskLow {
+    background: #44ff44;
+    box-shadow: 0 0 10px #44ff4488;
+}
+
+.riskHigh {
+    background: #ff4444;
+    box-shadow: 0 0 10px #ff444488;
+}
+
+.riskText {
+    position: absolute;
+    left: 110%;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+.intelBtn {
+    padding: 0.5rem 1rem;
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 900;
+    border-radius: 4px;
+    border: 1px solid var(--primary);
+    transition: all 0.2s;
+}
+
+.intelBtn:hover {
+    background: var(--primary);
+    color: black;
+}

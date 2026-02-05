@@ -1,0 +1,337 @@
+.dashboard {
+    padding: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.dashboardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+}
+
+.titleArea h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.5;
+    margin-top: 0.5rem;
+}
+
+.quickStats {
+    display: flex;
+    gap: 2rem;
+}
+
+.statBox {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: right;
+}
+
+.trialBox {
+    border-color: var(--primary-glow);
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+.statLabel {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 900;
+    opacity: 0.4;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.25rem;
+}
+
+.statValue {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.fmGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.topRow {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.executiveWidget {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.widgetHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.widgetTitle {
+    font-size: 0.7rem;
+    font-weight: 900;
+    opacity: 0.4;
+    letter-spacing: 1px;
+}
+
+.widgetValue {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.widgetDesc {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 0.5rem;
+}
+
+.tag {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary);
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.panelHeader {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panelTitle {
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.panelContent {
+    padding: 1.5rem;
+}
+
+/* Specific Widget Styles */
+.healthGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.healthItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.healthLabel {
+    font-size: 0.6rem;
+    opacity: 0.4;
+    margin-bottom: 0.25rem;
+}
+
+.healthBar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.healthFill {
+    height: 100%;
+    background: var(--primary);
+}
+
+.tacticalSnapshot {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.opponent {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.directive {
+    font-size: 0.85rem;
+    font-style: italic;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.directive::before {
+    content: "“";
+    font-size: 2rem;
+    color: var(--primary);
+    line-height: 0;
+    vertical-align: sub;
+}
+
+/* Performance Ticker */
+.performanceTicker {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    scrollbar-width: none;
+}
+
+.performanceTicker::-webkit-scrollbar {
+    display: none;
+}
+
+.performanceCard {
+    min-width: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-left: 3px solid var(--primary);
+}
+
+.ratingRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ratingValue {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.ratingValue.high {
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.performanceEvent {
+    font-size: 0.7rem;
+    font-weight: 700;
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+/* Risk List */
+.riskList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.riskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+}
+
+.riskName {
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.riskBadge {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 2px;
+    font-weight: 900;
+}
+
+.critical {
+    background: rgba(255, 68, 68, 0.2);
+    color: #ff4444;
+}
+
+.high {
+    background: rgba(255, 170, 0, 0.2);
+    color: #ffaa00;
+}
+
+/* Financial Bar */
+.financialVisual {
+    margin-top: 1.5rem;
+}
+
+.financialLabels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 800;
+    opacity: 0.4;
+}
+
+.progressContainer {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    .fmGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .topRow {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}

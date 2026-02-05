@@ -1,0 +1,153 @@
+.pitchContainer {
+    width: 100%;
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.modeBtn {
+    flex: 1;
+    padding: 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.modeBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modeBtn.active {
+    background: rgba(0, 242, 255, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+.pitch {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.5 / 1;
+    background: #0d1a10;
+    /* Dark Grass */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Pitch Markings */
+.halfwayLine {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-50%);
+}
+
+.centerCircle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20%;
+    aspect-ratio: 1/1;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.penaltyAreaLeft {
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 16%;
+    height: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-left: none;
+}
+
+.penaltyAreaRight {
+    position: absolute;
+    right: 0;
+    top: 25%;
+    width: 16%;
+    height: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-right: none;
+}
+
+/* Heatmap Grid */
+.heatmapGrid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    /* Grid is 12 rows, each row has 8 cells? 
+       Actually backend is 12x8.
+    */
+    flex-direction: column;
+}
+
+.row {
+    flex: 1;
+    display: flex;
+}
+
+.cell {
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: all 0.3s;
+}
+
+.cell:hover {
+    border-color: var(--primary);
+    z-index: 10;
+}
+
+.pitchLegend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+}
+
+.playerName {
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.metricLabel {
+    font-size: 0.65rem;
+    font-weight: 700;
+    opacity: 0.4;
+    letter-spacing: 0.05em;
+}
+
+.loading {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    font-family: var(--font-metric);
+}

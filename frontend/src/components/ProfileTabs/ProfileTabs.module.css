@@ -1,0 +1,31 @@
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 0.5rem;
+}
+
+.tabBtn {
+    background: none;
+    border: none;
+    color: var(--foreground);
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.tabBtn:hover {
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tabBtn.active {
+    opacity: 1;
+    color: var(--primary);
+    background: var(--primary-glow);
+}

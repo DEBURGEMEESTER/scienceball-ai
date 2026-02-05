@@ -1,0 +1,68 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    background: rgba(13, 17, 23, 0.4);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.columnTitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.attrList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.attrRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.attrName {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.attrValue {
+    font-weight: 800;
+    font-size: 0.9rem;
+    width: 24px;
+    text-align: right;
+    font-family: var(--font-mono);
+}
+
+.elite {
+    color: var(--attr-elite);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+}
+
+.high {
+    color: var(--attr-high);
+}
+
+.mid {
+    color: var(--attr-mid);
+}
+
+.low {
+    color: var(--attr-low);
+}

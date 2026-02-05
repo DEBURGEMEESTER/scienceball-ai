@@ -1,0 +1,702 @@
+{
+    "metadata": {
+        "version": "2025.3.1",
+        "source": "ScienceBall Pro Intel",
+        "last_updated": "2026-02-05",
+        "total_records": 50
+    },
+    "players": [
+        {
+            "fm_id": 20001928,
+            "id": "lamine-yamal",
+            "name": "Lamine Yamal",
+            "club": "FC Barcelona",
+            "league": "La Liga",
+            "position": "RW",
+            "age": 17,
+            "nationality": "Spain",
+            "market_value": "150000000",
+            "predicted_growth": 12.5,
+            "tactical_role": "Inside Forward",
+            "contract_expiry": "2026-06-30",
+            "image": "https://api.placeholder.com/150",
+            "metrics": [
+                {
+                    "label": "Dribbling",
+                    "value": 98
+                },
+                {
+                    "label": "Vision",
+                    "value": 94
+                },
+                {
+                    "label": "Packing",
+                    "value": 92
+                },
+                {
+                    "label": "Finishing Potential",
+                    "value": 47
+                }
+            ],
+            "attributes": {
+                "technical": [
+                    {
+                        "name": "Dribbling",
+                        "value": 19
+                    },
+                    {
+                        "name": "Passing",
+                        "value": 17
+                    },
+                    {
+                        "name": "Technique",
+                        "value": 18
+                    }
+                ],
+                "mental": [
+                    {
+                        "name": "Flair",
+                        "value": 18
+                    },
+                    {
+                        "name": "Vision",
+                        "value": 17
+                    },
+                    {
+                        "name": "Composure",
+                        "value": 16
+                    }
+                ],
+                "physical": [
+                    {
+                        "name": "Acceleration",
+                        "value": 17
+                    },
+                    {
+                        "name": "Agility",
+                        "value": 18
+                    },
+                    {
+                        "name": "Balance",
+                        "value": 16
+                    }
+                ]
+            },
+            "medical_dna": {
+                "injury_risk": "Low",
+                "notable_injuries": [],
+                "recovery_rate": 96
+            },
+            "physical_metrics": {
+                "top_speed": 36.2,
+                "sprint_distance": 840,
+                "stamina_rating": 82
+            },
+            "cognitive_profile": {
+                "inhibition": 92,
+                "working_memory": 98,
+                "flexibility": 95,
+                "design_fluency": 99
+            },
+            "biometric_profile": {
+                "bio_banded_age": 16.2,
+                "rae_factor": "Q3",
+                "biological_potential": "Elite"
+            },
+            "is_shortlisted": true,
+            "shortlist_category": "Global Scouting Targets"
+        },
+        {
+            "fm_id": 20001844,
+            "id": "jorrel-hato",
+            "name": "Jorrel Hato",
+            "club": "Ajax",
+            "league": "Eredivisie",
+            "position": "LCB/LB",
+            "age": 18,
+            "nationality": "Netherlands",
+            "market_value": "35000000",
+            "predicted_growth": 14.5,
+            "tactical_role": "Ball Playing Defender",
+            "contract_expiry": "2028-06-30",
+            "image": "https://api.placeholder.com/150",
+            "metrics": [
+                {
+                    "label": "Progression",
+                    "value": 94
+                },
+                {
+                    "label": "Recovery",
+                    "value": 90
+                },
+                {
+                    "label": "Finishing Potential",
+                    "value": 10
+                }
+            ],
+            "attributes": {
+                "technical": [
+                    {
+                        "name": "Tackling",
+                        "value": 16
+                    },
+                    {
+                        "name": "Passing",
+                        "value": 17
+                    },
+                    {
+                        "name": "Marking",
+                        "value": 15
+                    }
+                ],
+                "mental": [
+                    {
+                        "name": "Composure",
+                        "value": 18
+                    },
+                    {
+                        "name": "Positioning",
+                        "value": 17
+                    },
+                    {
+                        "name": "Determination",
+                        "value": 16
+                    }
+                ],
+                "physical": [
+                    {
+                        "name": "Pace",
+                        "value": 16
+                    },
+                    {
+                        "name": "Stamina",
+                        "value": 17
+                    },
+                    {
+                        "name": "Strength",
+                        "value": 15
+                    }
+                ]
+            },
+            "medical_dna": {
+                "injury_risk": "Low",
+                "notable_injuries": [],
+                "recovery_rate": 95
+            },
+            "physical_metrics": {
+                "top_speed": 32.5,
+                "sprint_distance": 920,
+                "stamina_rating": 88
+            },
+            "cognitive_profile": {
+                "inhibition": 89,
+                "working_memory": 94,
+                "flexibility": 92,
+                "design_fluency": 90
+            },
+            "biometric_profile": {
+                "bio_banded_age": 18.2,
+                "rae_factor": "Q1",
+                "biological_potential": "Elite"
+            },
+            "is_shortlisted": true,
+            "shortlist_category": "Ajax First Team"
+        },
+        {
+            "fm_id": 20001550,
+            "id": "brian-brobbey",
+            "name": "Brian Brobbey",
+            "club": "Ajax",
+            "league": "Eredivisie",
+            "position": "ST",
+            "age": 22,
+            "nationality": "Netherlands",
+            "market_value": "28000000",
+            "predicted_growth": 8.0,
+            "tactical_role": "Target Man",
+            "contract_expiry": "2027-06-30",
+            "image": "https://api.placeholder.com/150",
+            "metrics": [
+                {
+                    "label": "Hold-up",
+                    "value": 96
+                },
+                {
+                    "label": "Finishing",
+                    "value": 88
+                },
+                {
+                    "label": "Finishing Potential",
+                    "value": 74
+                }
+            ],
+            "attributes": {
+                "technical": [
+                    {
+                        "name": "Finishing",
+                        "value": 16
+                    },
+                    {
+                        "name": "First Touch",
+                        "value": 15
+                    },
+                    {
+                        "name": "Heading",
+                        "value": 14
+                    }
+                ],
+                "mental": [
+                    {
+                        "name": "Aggression",
+                        "value": 18
+                    },
+                    {
+                        "name": "Bravery",
+                        "value": 19
+                    },
+                    {
+                        "name": "Work Rate",
+                        "value": 17
+                    }
+                ],
+                "physical": [
+                    {
+                        "name": "Strength",
+                        "value": 20
+                    },
+                    {
+                        "name": "Balance",
+                        "value": 19
+                    },
+                    {
+                        "name": "Pace",
+                        "value": 16
+                    }
+                ]
+            },
+            "medical_dna": {
+                "injury_risk": "Medium",
+                "notable_injuries": [
+                    "Hamstring"
+                ],
+                "recovery_rate": 85
+            },
+            "physical_metrics": {
+                "top_speed": 33.1,
+                "sprint_distance": 450,
+                "stamina_rating": 72
+            },
+            "cognitive_profile": {
+                "inhibition": 80,
+                "working_memory": 85,
+                "flexibility": 82,
+                "design_fluency": 84
+            },
+            "biometric_profile": {
+                "bio_banded_age": 22.0,
+                "rae_factor": "Q2",
+                "biological_potential": "High"
+            },
+            "is_shortlisted": true,
+            "shortlist_category": "Ajax First Team"
+        },
+        {
+            "fm_id": 85046647,
+            "id": "jordan-henderson",
+            "name": "Jordan Henderson",
+            "club": "Ajax",
+            "league": "Eredivisie",
+            "position": "DM",
+            "age": 34,
+            "nationality": "England",
+            "market_value": "5000000",
+            "predicted_growth": -5.0,
+            "tactical_role": "Leader",
+            "contract_expiry": "2026-06-30",
+            "image": "https://api.placeholder.com/150",
+            "metrics": [
+                {
+                    "label": "Leadership",
+                    "value": 99
+                },
+                {
+                    "label": "Organization",
+                    "value": 95
+                },
+                {
+                    "label": "Finishing Potential",
+                    "value": 6
+                }
+            ],
+            "attributes": {
+                "technical": [
+                    {
+                        "name": "Passing",
+                        "value": 16
+                    },
+                    {
+                        "name": "Tackling",
+                        "value": 14
+                    },
+                    {
+                        "name": "Marking",
+                        "value": 14
+                    }
+                ],
+                "mental": [
+                    {
+                        "name": "Leadership",
+                        "value": 20
+                    },
+                    {
+                        "name": "Teamwork",
+                        "value": 19
+                    },
+                    {
+                        "name": "Determination",
+                        "value": 18
+                    }
+                ],
+                "physical": [
+                    {
+                        "name": "Stamina",
+                        "value": 14
+                    },
+                    {
+                        "name": "Strength",
+                        "value": 13
+                    },
+                    {
+                        "name": "Pace",
+                        "value": 10
+                    }
+                ]
+            },
+            "medical_dna": {
+                "injury_risk": "High",
+                "notable_injuries": [
+                    "Achilles"
+                ],
+                "recovery_rate": 70
+            },
+            "physical_metrics": {
+                "top_speed": 28.5,
+                "sprint_distance": 850,
+                "stamina_rating": 90
+            },
+            "cognitive_profile": {
+                "inhibition": 95,
+                "working_memory": 90,
+                "flexibility": 85,
+                "design_fluency": 80
+            },
+            "biometric_profile": {
+                "bio_banded_age": 34.0,
+                "rae_factor": "Q2",
+                "biological_potential": "Declining"
+            },
+            "is_shortlisted": true,
+            "shortlist_category": "Ajax First Team"
+        },
+        {
+            "fm_id": 20000999,
+            "id": "kenneth-taylor",
+            "name": "Kenneth Taylor",
+            "club": "Manchester United",
+            "league": "Premier League",
+            "position": "CM",
+            "age": 22,
+            "nationality": "Netherlands",
+            "market_value": "18000000",
+            "predicted_growth": 11.0,
+            "tactical_role": "Box to Box",
+            "contract_expiry": "2027-06-30",
+            "image": "https://api.placeholder.com/150",
+            "metrics": [
+                {
+                    "label": "Timing",
+                    "value": 88
+                },
+                {
+                    "label": "Passing",
+                    "value": 86
+                },
+                {
+                    "label": "Finishing Potential",
+                    "value": 27
+                }
+            ],
+            "attributes": {
+                "technical": [
+                    {
+                        "name": "Passing",
+                        "value": 16
+                    },
+                    {
+                        "name": "Technique",
+                        "value": 15
+                    },
+                    {
+                        "name": "Finishing",
+                        "value": 14
+                    }
+                ],
+                "mental": [
+                    {
+                        "name": "Off the Ball",
+                        "value": 16
+                    },
+                    {
+                        "name": "Work Rate",
+                        "value": 16
+                    },
+                    {
+                        "name": "Composure",
+                        "value": 14
+                    }
+                ],
+                "physical": [
+                    {
+                        "name": "Stamina",
+                        "value": 16
+                    },
+                    {
+                        "name": "Pace",
+                        "value": 14
+                    },
+                    {
+                        "name": "Agility",
+                        "value": 14
+                    }
+                ]
+            },
+            "medical_dna": {
+                "injury_risk": "Low",
+                "notable_injuries": [],
+                "recovery_rate": 94
+            },
+            "physical_metrics": {
+                "top_speed": 30.5,
+                "sprint_distance": 980,
+                "stamina_rating": 92
+            },
+            "cognitive_profile": {
+                "inhibition": 86,
+                "working_memory": 90,
+                "flexibility": 88,
+                "design_fluency": 89
+            },
+            "biometric_profile": {
+                "bio_banded_age": 22.1,
+                "rae_factor": "Q2",
+                "biological_potential": "High"
+            },
+            "is_shortlisted": true,
+            "shortlist_category": "Global Scouting Targets"
+        },
+        {
+            "fm_id": 20001850,
+            "id": "arda-guler",
+            "name": "Arda G\u00fcler",
+            "club": "Real Madrid",
+            "league": "La Liga",
+            "position": "CAM",
+            "age": 19,
+            "nationality": "Turkey",
+            "market_value": "45000000",
+            "predicted_growth": 18.0,
+            "tactical_role": "Advanced Playmaker",
+            "contract_expiry": "2029-06-30",
+            "image": "https://api.placeholder.com/150",
+            "metrics": [
+                {
+                    "label": "Vision",
+                    "value": 96
+                },
+                {
+                    "label": "Passing",
+                    "value": 94
+                },
+                {
+                    "label": "Set Pieces",
+                    "value": 92
+                },
+                {
+                    "label": "Finishing Potential",
+                    "value": 31
+                }
+            ],
+            "attributes": {
+                "technical": [
+                    {
+                        "name": "Passing",
+                        "value": 18
+                    },
+                    {
+                        "name": "Technique",
+                        "value": 19
+                    },
+                    {
+                        "name": "First Touch",
+                        "value": 18
+                    }
+                ],
+                "mental": [
+                    {
+                        "name": "Vision",
+                        "value": 18
+                    },
+                    {
+                        "name": "Flair",
+                        "value": 17
+                    },
+                    {
+                        "name": "Decisions",
+                        "value": 16
+                    }
+                ],
+                "physical": [
+                    {
+                        "name": "Agility",
+                        "value": 16
+                    },
+                    {
+                        "name": "Balance",
+                        "value": 15
+                    },
+                    {
+                        "name": "Natural Fitness",
+                        "value": 14
+                    }
+                ]
+            },
+            "medical_dna": {
+                "injury_risk": "Medium",
+                "notable_injuries": [
+                    "Meniscus"
+                ],
+                "recovery_rate": 88
+            },
+            "physical_metrics": {
+                "top_speed": 32.8,
+                "sprint_distance": 620,
+                "stamina_rating": 74
+            },
+            "cognitive_profile": {
+                "inhibition": 88,
+                "working_memory": 94,
+                "flexibility": 96,
+                "design_fluency": 92
+            },
+            "biometric_profile": {
+                "bio_banded_age": 18.1,
+                "rae_factor": "Q1",
+                "biological_potential": "Elite"
+            },
+            "is_shortlisted": true,
+            "shortlist_category": "Global Scouting Targets"
+        },
+        {
+            "fm_id": 20002100,
+            "id": "florian-wirtz",
+            "name": "Florian Wirtz",
+            "club": "Bayer Leverkusen",
+            "league": "Bundesliga",
+            "position": "CAM",
+            "age": 21,
+            "nationality": "Germany",
+            "market_value": "110000000",
+            "predicted_growth": 8.0,
+            "tactical_role": "Creative Engine",
+            "contract_expiry": "2027-06-30",
+            "image": "https://api.placeholder.com/150",
+            "metrics": [
+                {
+                    "label": "Vision",
+                    "value": 98
+                },
+                {
+                    "label": "xT",
+                    "value": 96
+                },
+                {
+                    "label": "OBV",
+                    "value": 94
+                },
+                {
+                    "label": "Finishing Potential",
+                    "value": 68
+                }
+            ],
+            "attributes": {
+                "technical": [
+                    {
+                        "name": "Passing",
+                        "value": 18
+                    },
+                    {
+                        "name": "First Touch",
+                        "value": 19
+                    },
+                    {
+                        "name": "Dribbling",
+                        "value": 17
+                    }
+                ],
+                "mental": [
+                    {
+                        "name": "Vision",
+                        "value": 19
+                    },
+                    {
+                        "name": "Decisions",
+                        "value": 18
+                    },
+                    {
+                        "name": "Anticipation",
+                        "value": 17
+                    }
+                ],
+                "physical": [
+                    {
+                        "name": "Agility",
+                        "value": 17
+                    },
+                    {
+                        "name": "Balance",
+                        "value": 16
+                    },
+                    {
+                        "name": "Stamina",
+                        "value": 15
+                    }
+                ]
+            },
+            "medical_dna": {
+                "injury_risk": "Low",
+                "notable_injuries": [
+                    "ACL (Recovered)"
+                ],
+                "recovery_rate": 92
+            },
+            "physical_metrics": {
+                "top_speed": 33.5,
+                "sprint_distance": 780,
+                "stamina_rating": 88
+            },
+            "cognitive_profile": {
+                "inhibition": 95,
+                "working_memory": 99,
+                "flexibility": 98,
+                "design_fluency": 97
+            },
+            "biometric_profile": {
+                "bio_banded_age": 20.9,
+                "rae_factor": "Q2",
+                "biological_potential": "Elite"
+            },
+            "is_shortlisted": true,
+            "shortlist_category": "Global Scouting Targets"
+        }
+    ]
+}
